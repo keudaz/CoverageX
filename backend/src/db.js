@@ -1,5 +1,6 @@
 const mysql = require('mysql2/promise');
 
+//db data
 const pool = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
   database: process.env.DB_NAME || 'todoapp',

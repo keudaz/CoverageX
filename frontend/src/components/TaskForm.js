@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, Card, Form} from 'react-bootstrap';
 
 export default function TaskForm({ onCreate }) {
   const [title, setTitle] = useState('');
@@ -21,19 +22,50 @@ export default function TaskForm({ onCreate }) {
   };
 
   return (
-    <div className="form-card">
-      <h3>Add a Task</h3>
-      <form onSubmit={submit}>
-        <div>
-          <input placeholder="Title" value={title} onChange={e=>setTitle(e.target.value)} style={{width:'100%',padding:8,marginBottom:8}} />
+    <Card className="form-card sticky-top" style={{ top: '2rem' }}>
+      <Card.Body>
+        <div className="d-flex align-items-center mb-4">
+          <div className="icon-wrapper">
+            <i className="fas fa-sparkles"></i>
+          </div>
+          <h3 className="form-card-title mb-0">New Task</h3>
         </div>
-        <div>
-          <textarea placeholder="Description" value={description} onChange={e=>setDescription(e.target.value)} style={{width:'100%',padding:8,height:90}} />
-        </div>
-        <div style={{textAlign:'right', marginTop:8}}>
-          <button className="add-btn" type="submit" disabled={busy}>{busy ? 'Adding...' : 'Add'}</button>
-        </div>
-      </form>
-    </div>
+        
+        <Form onSubmit={submit}>
+          <Form.Group className="mb-4">
+            <Form.Control
+              type="text"
+              placeholder="What needs to be done?"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="form-input"
+            />
+          </Form.Group>
+          
+          <Form.Group className="mb-4">
+            <Form.Control
+              as="textarea"
+              rows={4}
+              placeholder="Add more details... (optional)"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="form-input"
+            />
+          </Form.Group>
+          
+          <div className="d-grid">
+            <Button 
+              variant="primary" 
+              type="submit" 
+              className="btn-add"
+              disabled={busy}
+            >
+              <i className="fas fa-plus me-2"></i>
+              {busy ? 'Adding...' : 'Add Task'}
+            </Button>
+          </div>
+        </Form>
+      </Card.Body>
+    </Card>
   );
 }

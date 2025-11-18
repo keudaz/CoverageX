@@ -12,10 +12,8 @@ CREATE TABLE IF NOT EXISTS task (
   INDEX idx_completed (completed)
 );
 
--- sample data (ctrl+/)
+-- use se sample data (ctrl+/)
 -- INSERT INTO task (title, description) VALUES
 -- ('Buy books', 'Buy books for the next school year'),
 -- ('Clean home', 'Need to clean the bed room'),
--- ('Takehome assignment', 'Finish the mid-term assignment'),
--- ('Play Cricket', 'Plan the soft ball cricket match on next Sunday'),
--- ('Help Saman', 'Saman need help with his software project');
+-- ('Play Cricket', 'Plan the soft ball cricket match on next Sunday');
