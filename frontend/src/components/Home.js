@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import TaskForm from './components/TaskForm';
-import TaskCard from './components/TaskCard';
-import { fetchTasks, createTask, completeTask } from './api';
+import TaskForm from './TaskForm';
+import TaskCard from './TaskCard';
+import { fetchTasks, createTask, completeTask } from '../api';
 
 export default function App() {
   const [tasks, setTasks] = useState([]);
