@@ -46,7 +46,7 @@ export default function TaskForm({ onCreate }) {
             <Form.Control
               as="textarea"
               rows={4}
-              placeholder="Add more details... (optional)"
+              placeholder="Add more details..."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className="form-input"
