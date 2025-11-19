@@ -18,7 +18,7 @@ export async function createTask(payload) {
 }
 
 export async function completeTask(id) {
-  const r = await fetch(`${API_BASE}/api/tasks/${id}/complete`, { method: 'POST' });
+  const r = await fetch(`${API_BASE}/api/tasks/${id}/complete`, { method: 'PUT' });
   if (!r.ok) throw new Error('Failed completing task');
   return r.json();
 }
