@@ -11,7 +11,7 @@
 
 3. Wait for DB to initialize (~10s), backend to start, frontend served at:
    - Frontend UI: http://localhost:3000
-   - Backend API: http://localhost:4000 (or inside docker network at http://backend:4000)
+   - Backend API: http://localhost:4000
 
 ## Running backend tests
 You can run backend tests locally if you have Node and DB available:
